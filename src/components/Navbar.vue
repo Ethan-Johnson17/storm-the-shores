@@ -1,0 +1,92 @@
+<template>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+      <div class="d-flex align-items-center">
+        <img alt="logo" class="text-white" src="../assets/img/Lionbold-logo.svg" height="75" />
+      </div>
+      <div>
+        <h1 class="headerText mb-0">The Pride</h1>
+        <h1 class="headerText mb-0 text-center">Survival</h1>
+      </div>
+    </router-link>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon" />
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto">
+        <li>
+          <router-link
+            :to="{ name: 'Blog' }"
+            class="btn text-white lighten-30 selectable text-uppercase"
+          >
+            Blog
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="{ name: 'Shop' }"
+            class="btn text-white lighten-30 selectable text-uppercase"
+          >
+            Shop
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="{ name: 'Membership' }"
+            class="btn text-white lighten-30 selectable text-uppercase"
+          >
+            Membership
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="{ name: 'Contact' }"
+            class="btn text-white lighten-30 selectable text-uppercase"
+          >
+            Contact
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            :to="{ name: 'About' }"
+            class="btn text-white lighten-30 selectable text-uppercase"
+          >
+            About
+          </router-link>
+        </li>
+      </ul>
+      <!-- LOGIN COMPONENT HERE -->
+      <Login />
+    </div>
+  </nav>
+</template>
+
+<script>
+export default {
+  setup() {
+    return {};
+  },
+};
+</script>
+
+<style scoped>
+a:hover {
+  text-decoration: none;
+}
+.nav-link {
+  text-transform: uppercase;
+}
+.navbar-nav .router-link-exact-active {
+  border-bottom: 2px solid var(--bs-success);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+</style>

@@ -10,23 +10,22 @@
 </template>
 
 <script>
-import { computed } from '@vue/reactivity';
-import { onMounted } from 'vue';
+import { computed } from 'vue';
 import { AppState } from '../AppState';
 import { logger } from '../utils/Logger';
 import Pop from '../utils/Pop';
-import {shopService} from '../services/ShopService'
+// import {shopService} from '../services/ShopService'
 
 export default {
   setup() {
-    onMounted(async () => {
-    try {
-      await shopService.getAllProducts('api/products')
-    } catch (error) {
-      logger.error(error)
-      Pop.toast(error.message, 'error')
-    }
-    })
+    // onMounted(async () => {
+    // try {
+    //   await shopService.getAllProducts('api/products')
+    // } catch (error) {
+    //   logger.error(error)
+    //   Pop.toast(error.message, 'error')
+    // }
+    // })
     return {
     products: computed(() => AppState.products)
   }

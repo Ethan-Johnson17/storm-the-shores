@@ -4,6 +4,7 @@
 @import "./utilities.scss";
 @import "./loaders.scss";
 @import url('https://fonts.googleapis.com/css2?family=The+Nautigal:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 
@@ -15,7 +16,8 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: $body-bg;
+  background-color: $oxford-blue;
+  color: $white;
 }
 
 main {
@@ -44,7 +46,20 @@ form:invalid button[type="submit"] {
   pointer-events: none;
 }
 
+.headerText, .headerText2 {
+  font-family: "Noto Serif", serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: white;
+  text-shadow: black 3px 3px 3px;
+}
 .headerText {
-  font-family: 'The Nautigal', cursive;
-  font-size: 48px;
+  font-size: 28px;
+}
+.headerText2 {
+  font-size: 16px;
+}
+
+.pagePadding {
+  padding-top: 10rem;
 }

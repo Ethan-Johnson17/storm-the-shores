@@ -1,12 +1,12 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+  <nav class="navbar navbar-expand-lg w-100 px-3 position-absolute border-bottom border-white">
+    <router-link class="navbar-brand d-flex justify-content-between" :to="{ name: 'Home' }">
       <div class="d-flex align-items-center">
-        <img alt="logo" class="text-white" src="../assets/img/Lionbold-logo.svg" height="75" />
+        <img alt="logo" class="text-white" src="../assets/img/stsNoBg.png" height="75" />
       </div>
       <div>
-        <h1 class="headerText mb-0">The Pride</h1>
-        <h1 class="headerText mb-0 text-center">Survival</h1>
+        <h1 class="headerText mb-0">STORM THE SHORES</h1>
+        <h1 class="headerText2 mb-0 text-center">FORTIFY THE LINES. TURN THE TIDE.</h1>
       </div>
     </router-link>
     <button
@@ -88,5 +88,8 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+li {
+  text-shadow: 2px 2px 2px black;
 }
 </style>

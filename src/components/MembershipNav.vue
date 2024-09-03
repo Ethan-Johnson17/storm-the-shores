@@ -3,11 +3,6 @@
       <div class="row">
         <ul class="membership-nav d-flex justify-content-evenly">
           <li>
-            <router-link :to="{ name: 'Exercises' }" class="btn text-dark lighten-30 selectable text-uppercase">
-              Exercises
-            </router-link>
-          </li>
-          <li>
             <router-link :to="{ name: 'Skills' }" class="btn text-dark lighten-30 selectable text-uppercase">
               Skills
             </router-link>

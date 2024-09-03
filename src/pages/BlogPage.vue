@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row pagePadding">
       <div class="col-12 text-center">
         <h2>Blog Posts</h2>
       </div>
@@ -9,12 +9,11 @@
       </div>
     </div>
     <div class="row" v-for="blog in blogs" :key="blog.id">
-      <div>{{ blog.blogTitle }}</div>
       <div class="col-12 pb-5 text-center">
-        <img src="https://placehold.co/1000x300" />
+        <img :src="blog.aboutImageURL" />
         <h3 class="pt-3">{{ blog.blogTitle }}</h3>
-        <h4 class="pt-3">{{ blog.subtitle }}</h4>
-        <p>{{ blog.category }}</p>
+        <h4 class="">{{ blog.subtitle }}</h4>
+        <p class="text-grey">{{ blog.category }}</p>
         <button @click="pushToDetails(blog)" class="btn btn-primary">View</button>
       </div>
     </div>
@@ -27,6 +26,8 @@ import { useSanityFetcher } from 'vue-sanity'
 import { computed, onMounted } from 'vue'
 import { PortableText } from '@portabletext/vue';
 import { AppState } from '@/AppState';
+import { useRouter } from 'vue-router';
+import Pop from '@/utils/Pop';
 
 export default {
   setup() {
@@ -34,21 +35,44 @@ export default {
 
     // Unwrap the Ref and map the data
     // const blogTitles = computed(() => data.value?.map(blog => blog.title) || []);
-    onMounted(async () => {
-      let data = await useSanityFetcher('*[_type == "blog"]')
-      AppState.blogs = data.data.value
-      // blogs = data.value.map(blog => ({
-      //   title: blog.itle,
-      //   subtitle: blog.subtitle
-      // }))
-    })
-    let blogs = computed(() => AppState.blogs)
+    onMounted(async() => {
+      AppState.isLoading = true;
+        try {
+          let data = await useSanityFetcher(`*[_type == "blog"]{
+            blogTitle,
+            subtitle,
+            author,
+            category,
+            slug,
+            content,
+            details,
+            postImageContent,
+            "aboutImageURL": coalesce(aboutImageURL, aboutImage.asset->url)
+            }`
+          );
+          
+          AppState.blogs = data.data.value
+        }
+        catch (error){
+          Pop.error(error);
+        }
+        finally {
+          AppState.isLoading = false
+        }
+      })
+      let blogs = computed(() => AppState.blogs)
+    let router = useRouter();
     
     return { 
       blogs,
 
       pushToDetails(blog) {
-        
+        logger.log('blog', blog)
+        AppState.selectedBlog = blog
+        router.push({
+            name: "BlogDetails",
+            params: { slug: blog.slug.current },
+          })
       }
      }
   },

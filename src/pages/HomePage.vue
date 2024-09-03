@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid">
-      <div class="row bg-outdoor justify-content-around py-5">
+      <div class="row bg-outdoor justify-content-around pb-5 pagePadding">
         <form class="col-md-3 px-5 py-3 bg-light rounded shadow-p">
           <h4 class="pb-2 text-center">Join "The Pride"</h4>
           <div class="mb-3">
@@ -275,5 +275,6 @@ header {
 .outline {
     text-shadow: rgba(240, 248, 255, 0.352);
 }
+
 
 </style>

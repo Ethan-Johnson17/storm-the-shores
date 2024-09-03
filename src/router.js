@@ -12,11 +12,6 @@ const routes = [
     component: loadPage('HomePage')
   },
   {
-    path: '/exercises',
-    name: 'Exercises',
-    component: loadPage('ExercisePage')
-  },
-  {
     path: '/shop',
     name: 'Shop',
     component: loadPage('ShopPage')
@@ -66,7 +61,13 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: loadPage('BlogPage'),
-  }
+  },
+  {
+    path: '/blog/:slug',
+    name: 'BlogDetails',
+    component: loadPage('BlogDetailsPage'),
+    props: (route) => ({ slug: route.params.slug, blog: route.query.blog })
+  },
 ]
 
 export const router = createRouter({

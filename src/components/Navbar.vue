@@ -38,14 +38,14 @@
             Shop
           </router-link>
         </li>
-        <li>
+        <!-- <li>
           <router-link
             :to="{ name: 'Membership' }"
             class="btn text-white lighten-30 selectable text-uppercase"
           >
             Membership
           </router-link>
-        </li>
+        </li> -->
         <li>
           <router-link
             :to="{ name: 'Contact' }"

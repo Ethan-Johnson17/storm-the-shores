@@ -1,7 +1,7 @@
 <template>
   <header>
     <Navbar />
-    <MembershipNav v-show="appState?.account?.membership" />
+    <!-- <MembershipNav v-show="appState?.account?.membership" /> -->
   </header>
   <main>
     <router-view />

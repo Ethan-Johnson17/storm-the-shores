@@ -36,11 +36,11 @@ const routes = [
     name: 'Challenges',
     component: loadPage('ContactPage')
   },
-  {
-    path: '/membership',
-    name: 'Membership',
-    component: loadPage('MembershipPage')
-  },
+  // {
+  //   path: '/membership',
+  //   name: 'Membership',
+  //   component: loadPage('MembershipPage')
+  // },
   {
     path: '/achievements',
     name: 'Achievements',

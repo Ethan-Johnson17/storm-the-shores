@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" v-show="!account.membership">
+  <div class="container-fluid">
     <div class="row d-flex justify-content-center mb-5">
       <div class="col-12 text-center my-2">
         <h2>Memberships</h2>
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="row d-flex justify-content-evenly">
+    <!-- <div class="row d-flex justify-content-evenly">
       <div class="col-3 elevation-4 p-3 border border-grey rounded membershipCard selectable" @click="selectMembershipType('lifetime')">
         <div class="row">
           <div class="col-12">
@@ -45,22 +45,22 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <div class="container-fluid" v-show="account.membership">
+  <!-- <div class="container-fluid" v-show="account.membership">
     <div class="row">
       <div class="col-12">
         <h2>Welcome, {{account.name}}!</h2>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
-import { computed } from '@vue/reactivity';
+import { computed } from 'vue';
 import { accountService } from '../services/AccountService';
-import { shopService } from '../services/ShopService';
+// import { shopService } from '../services/ShopService';
 import Pop from '../utils/Pop';
 import { AppState } from '../AppState';
 
@@ -73,16 +73,16 @@ export default {
       account: computed(() => AppState.account),
       path,
 
-      async selectMembershipType(choice) {
-        let message = '';
-        if (choice != 'lifetime') {
-          message = 'You can always upgrade or cancel later.'
-        }
-        const yes = await Pop.confirm(`Would you like to join The Pride with the ${choice} membership?`, message)
-        if (!yes) { return }
-        await accountService.update(choice)
-        Pop.toast(`Joined! Welcome to The Pride!`)
-      }
+      // async selectMembershipType(choice) {
+      //   let message = '';
+      //   if (choice != 'lifetime') {
+      //     message = 'You can always upgrade or cancel later.'
+      //   }
+      //   const yes = await Pop.confirm(`Would you like to join The Pride with the ${choice} membership?`, message)
+      //   if (!yes) { return }
+      //   await accountService.update(choice)
+      //   Pop.toast(`Joined! Welcome to The Pride!`)
+      // }
     }
   }
 }

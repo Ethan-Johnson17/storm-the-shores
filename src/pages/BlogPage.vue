@@ -8,11 +8,20 @@
         <h3>All Posts</h3>
       </div>
     </div>
-    <div class="row" v-for="blog in blogs" :key="blog.id">
-      <div class="col-12 pb-5 text-center">
+    <!-- Loader -->
+    <div class="row" v-if="isLoading">
+      <Loader></Loader>
+    </div>
+    <!-- Blog List -->
+    <div class="row pt-3" v-else>
+      <div
+        v-for="blog in blogs"
+        :key="blog.slug.current"
+        class="col-12 pb-5 text-center"
+      >
         <img :src="blog.aboutImageURL" />
         <h3 class="pt-3">{{ blog.blogTitle }}</h3>
-        <h4 class="">{{ blog.subtitle }}</h4>
+        <h4>{{ blog.subtitle }}</h4>
         <p class="text-grey">{{ blog.category }}</p>
         <button @click="pushToDetails(blog)" class="btn btn-primary">View</button>
       </div>
@@ -21,64 +30,65 @@
 </template>
 
 <script>
-import { logger } from '@/utils/Logger'
 import { useSanityFetcher } from 'vue-sanity'
-import { computed, onMounted } from 'vue'
-import { PortableText } from '@portabletext/vue';
-import { AppState } from '@/AppState';
-import { useRouter } from 'vue-router';
-import Pop from '@/utils/Pop';
+import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { AppState } from '@/AppState'
+import Pop from '@/utils/Pop'
+import Loader from '@/components/loader.vue'
+import { logger } from '@/utils/Logger'
 
 export default {
+  components: {
+    Loader
+  },
   setup() {
-    // const { data } = useSanityFetcher('*[_type == "blog"]');
+    const blogs = ref([])
+    const isLoading = ref(true)
+    const router = useRouter()
 
-    // Unwrap the Ref and map the data
-    // const blogTitles = computed(() => data.value?.map(blog => blog.title) || []);
-    onMounted(async() => {
-      AppState.isLoading = true;
-        try {
-          let data = await useSanityFetcher(`*[_type == "blog"]{
-            blogTitle,
-            subtitle,
-            author,
-            category,
-            slug,
-            content,
-            details,
-            postImageContent,
-            "aboutImageURL": coalesce(aboutImageURL, aboutImage.asset->url)
-            }`
-          );
-          
-          AppState.blogs = data.data.value
+    onMounted(async () => {
+      try {
+        const { data } = await useSanityFetcher(`*[_type == "blog"]{
+          blogTitle,
+          subtitle,
+          author,
+          category,
+          slug,
+          content,
+          details,
+          postImageContent,
+          "aboutImageURL": coalesce(aboutImageURL, aboutImage.asset->url)
+        }`)
+        while (!data.value) {
+          await new Promise(resolve => setTimeout(resolve, 200));
         }
-        catch (error){
-          Pop.error(error);
-        }
-        finally {
-          AppState.isLoading = false
-        }
+        blogs.value = data.value
+        AppState.blogs = data.value
+        isLoading.value = false
+        logger.log(isLoading.value, 'after', data.value)
+      } catch (error) {
+        Pop.error(error)
+      } 
+    })
+
+    const pushToDetails = (blog) => {
+      AppState.selectedBlog = blog
+      router.push({
+        name: 'BlogDetails',
+        params: { slug: blog.slug.current },
       })
-      let blogs = computed(() => AppState.blogs)
-    let router = useRouter();
-    
-    return { 
-      blogs,
+    }
 
-      pushToDetails(blog) {
-        logger.log('blog', blog)
-        AppState.selectedBlog = blog
-        router.push({
-            name: "BlogDetails",
-            params: { slug: blog.slug.current },
-          })
-      }
-     }
+    return {
+      blogs,
+      isLoading,
+      pushToDetails,
+    }
   },
 }
 </script>
 
-<style>
-
+<style scoped>
+/* Add any relevant styles here */
 </style>

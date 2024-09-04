@@ -11,11 +11,12 @@
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { AppState } from './AppState';
-import { useSanityClient } from 'vue-sanity'
+import { useSanityClient, useSanityFetcher } from 'vue-sanity'
 import Navbar from '@/components/Navbar.vue'; // Adjust the path accordingly
+import Pop from './utils/Pop';
 
 
 export default {

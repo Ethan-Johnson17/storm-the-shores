@@ -24,6 +24,14 @@
       <ul class="navbar-nav me-auto">
         <li>
           <router-link
+            :to="{ name: 'Home' }"
+            class="btn text-white lighten-30 selectable text-uppercase"
+          >
+            Home
+          </router-link>
+        </li>
+        <li>
+          <router-link
             :to="{ name: 'Blog' }"
             class="btn text-white lighten-30 selectable text-uppercase"
           >

@@ -38,9 +38,11 @@
         </form>
         <div class="col-md-5 py-2 ms-3 text-start medque rounded text-dark">
           <h2 class="why-section">Why "Storm The Shores"</h2>
-          <p class="why-section">
+          <h4 class="why-section">
             Join Storm The Shores to be a part of a community...
-          </p>
+          </h4>
+          <p class="fs-5">Storm the Shores is not a call to violence or anarchy but a call to all men everywhere to seek self-improvement and a relationship with the Almighty. Good men are needed to raise healthy families and nations. Now is the time for men to rise up as fathers, husbands, and citizens. Now is the time to Storm the Shores, Fortify the Line, and Turn the Tide. </p>
+          <p class="fs-5">We aim to <i class="fw-bold">equip, educate, and motivate.</i></p>
         </div>
       </div>
       <div class="row justify-content-around bg-success">
@@ -70,11 +72,11 @@
           </div>
         </div>
         <div class="col-md-4 p-3 m-3 text-dark">
-          <h5 class="">
-            Storm the Shores Aims to Help Men Grow in the Stewardships
-          </h5>
-          <p>
-            Storm the Shores is not a call to violence or anarchy but a call to all men everywhere to seek self-improvement and a relationship with the Almighty. Good men are needed to raise healthy families and nations. Now is the time for men to rise up as fathers, husbands, and citizens. Now is the time to Storm the Shores, Fortify the Line, and Turn the Tide. 
+          <h3>
+            Join Storm the Shores to Experience Growth
+          </h3>
+          <p class="fs-5">
+            We believe that men are at their peak when they can handle anything that life throws at them. Whether that be fixing a flat tire, surviving in the wilderness, or even planning the best date night ever, Storm the Shores will teach you everything you need to know. 
           </p>
         </div>
       </div>
@@ -87,19 +89,10 @@
         </div>
         <div class="col-md-7">
           <h3 class="mt-5 pt-3">
-            <span class="material-icons matsizeSM"> wash </span>Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Tenetur incidunt error
-            voluptatum!
+            Join Storm The Shores to be a part of a community
           </h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui
-            repellendus deserunt maxime sunt corporis accusantium doloribus et
-            fugiat, animi doloremque amet earum odio quisquam laborum ipsum
-            sequi veritatis dolorum labore autem porro, consequuntur voluptas,
-            molestiae maiores. Voluptatum impedit qui praesentium, sapiente
-            itaque architecto perspiciatis officiis, non hic quod sunt cumque.
-            Aperiam accusamus eum ducimus nemo consequatur pariatur illum qui
-            cum.
+          <p class="fs-5">
+            Men grow most when they can be a part of a community where there is healthy competition, friendly encouragment, and constructive criticism. Like a pride of lions or a unit of soldiers, Storm the Shores provides that community to flourish. 
           </p>
           <div class="row justify-content-end">
             <div class="col-md-1">
@@ -112,16 +105,28 @@
           </div>
         </div>
       </div>
-      <div class="row justify-content-around bg-light py-3 text-center">
+      <div class="row justify-content-around bg-success py-3 text-center">
+        <div class="col-md-12">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-8">
+              <h3 class="mt-5 pt-3">
+                Join Storm the Shores to Get Equipped
+              </h3>
+              <p class="fs-5 text-start">
+                In certain situations, men are only as good as the supplies and equipment they have around them. Joining Storm The Shores gives members discounts on all of the gear they need to go hunting, rucking, camping, or surviving. 
+              </p>
+            </div>
+          </div>
+        </div>
         <div class="col-md-3 order-md-2">
           <div class="card" style="width: 18rem; height: 18rem">
             <div class="card-body">
               <div class="text-center">
-                <span class="material-icons matsizeSM px-2"> star </span
-                ><span class="material-icons matsizeSM px-2"> star </span
-                ><span class="material-icons matsizeSM px-2"> star </span>
+                <i class="mdi mdi-star matsizeSM px-2"></i
+                ><i class="mdi mdi-star matsizeSM px-2"></i
+                ><i class="mdi mdi-star matsizeSM px-2"></i>
               </div>
-              <h5 class="card-title text-muted">Zombie Joanne</h5>
+              <h5 class="card-title text-muted">Bushcraft Hatchet</h5>
               <p class="card-text">
                 Zombie ipsum reversus ab viral inferno, nam rick grimes malum
                 cerebro. De carne lumbering animata corpora quaeritis. Summus
@@ -133,7 +138,7 @@
         <div class="col-md-3 m-5 order-md-1">
           <div class="card justify-content-center" style="width: 18rem">
             <div class="card-body">
-              <h5 class="card-title text-muted">Zombie Joe</h5>
+              <h5 class="card-title text-muted">Tent</h5>
               <p class="card-text">
                 Zombie ipsum reversus ab viral inferno, nam rick grimes malum
                 cerebro. De carne lumbering animata corpora quaeritis. Summus
@@ -145,7 +150,7 @@
         <div class="col-md-3 m-5 order-md-3">
           <div class="card" style="width: 18rem">
             <div class="card-body">
-              <h5 class="card-title text-muted">Jombie Zoe</h5>
+              <h5 class="card-title text-muted">Sleeping Bag</h5>
               <p class="card-text">
                 Zombie ipsum reversus ab viral inferno, nam rick grimes malum
                 cerebro. De carne lumbering animata corpora quaeritis. Summus
@@ -158,9 +163,9 @@
       <div class="row bg-dark">
         <div class="col-md-12">
           <div class="vstack gap-3 text-light p-4">
-            <h4>
+            <h3>
               Zombie ipsum reversus ab viral inferno, nam rick grimes malum
-            </h4>
+            </h3>
             <p>
               Zombie ipsum reversus ab viral inferno, nam rick grimes malum
               cerebro. De carne lumbering animata corpora quaeritis. Summus
@@ -257,7 +262,7 @@ header {
 }
 
 .medque {
-  background-color: rgba(229, 229, 229, 0.498);
+  background-color: rgba(255, 255, 255, 0.562);
   height: 30%;
 }
 

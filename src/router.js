@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: loadPage('ContactPage')
+    component: loadPage('AboutPage')
   },
   {
     path: '/skills',

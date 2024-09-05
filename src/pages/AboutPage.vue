@@ -3,8 +3,16 @@
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is the about page</h1>
+  <div class="container">
+    <div class="row pagePadding">
+      <div class="col-12 about text-center">
+        <h1>What is Storm the Shores?</h1>
+        <img src="../assets/img/stsNoBGNoText.png" alt="">
+      </div>
+    </div>
+    <div class="row">
+      
+    </div>
   </div>
 </template>
 

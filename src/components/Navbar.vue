@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg w-100 px-3 position-absolute border-bottom border-white">
+  <nav class="navbar navbar-expand-lg w-100 bg-dark-blue px-3 position-absolute border-bottom border-white">
     <router-link class="navbar-brand d-flex justify-content-between" :to="{ name: 'Home' }">
       <div class="d-flex align-items-center">
         <img alt="logo" class="text-white" src="../assets/img/stsNoBg.png" height="75" />

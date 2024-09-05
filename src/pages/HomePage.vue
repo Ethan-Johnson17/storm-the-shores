@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <div class="row bg-outdoor justify-content-around pb-5 pagePadding">
         <form class="col-md-3 px-5 py-3 bg-light rounded shadow-p">
-          <h4 class="pb-2 text-center">Join "The Pride"</h4>
+          <h4 class="pb-2 text-center">Join "Storm The Shores"</h4>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label"
               >Name</label
@@ -36,56 +36,45 @@
             ></textarea>
           </div>
         </form>
-        <div class="col-md-5 py-2 ms-3 text-start medque rounded">
-          <h2 class="why-section">Why "The Pride"</h2>
+        <div class="col-md-5 py-2 ms-3 text-start medque rounded text-dark">
+          <h2 class="why-section">Why "Storm The Shores"</h2>
           <p class="why-section">
-            Join The Pride to be a part of a community...
+            Join Storm The Shores to be a part of a community...
           </p>
         </div>
       </div>
-      <div class="row justify-content-around bg-dark">
+      <div class="row justify-content-around bg-success">
         <div class="col-md-6 m-3 p-3 order-md-2 cspill">
           <div class="card">
             <div class="card-body shadow-lg">
-              <p>
-                <span class="material-icons pe-2 pb-0"> fitness_center </span
-                >Iterative approaches to corporate strategy foster collaborative
-                thinking to
+              <p class="fs-5">
+                <i class="mdi mdi-weight-lifter pe-2 pb-0 fs-4"></i
+                >Grow in mind and body
               </p>
-              <p>
-                <span class="material-icons pe-2 pb-0"> grass </span>Iterative
-                approaches to corporate strategy foster collaborative thinking
-                to
+              <p class="fs-5">
+                <i class="mdi mdi-tree pe-2 pb-0 fs-4"></i>
+                Grow skills to persevere through any situation
               </p>
-              <p>
-                <span class="material-icons pe-2 pb-0"> family_restroom </span
-                >Iterative approaches to corporate strategy foster collaborative
-                thinking to
+              <p class="fs-5">
+                <i class="mdi mdi-family-tree pe-2 pb-0 fs-4"></i
+                >Grow as a father and husband
               </p>
-              <p>
-                <span class="material-icons pe-2 pb-0"> dry </span>Iterative
-                approaches to corporate strategy foster collaborative thinking
-                to
+              <p class="fs-5">
+                <i class="mdi mdi-brain pe-2 pb-0 fs-4"></i>Grow in emotional resilience 
               </p>
-              <p>
-                <span class="material-icons pe-2 pb-0"> carpenter </span
-                >Iterative approaches to corporate strategy foster collaborative
-                thinking to
+              <p class="fs-5">
+                <i class="mdi mdi-home pe-2 pb-0 fs-4"></i
+                >Grow as the caretaker of home and property
               </p>
             </div>
           </div>
         </div>
-        <div class="col-md-4 p-3 m-3 text-light">
+        <div class="col-md-4 p-3 m-3 text-dark">
           <h5 class="">
-            Leverage agile frameworks to provide a robust synopsis for high
-            level overviews.
+            Storm the Shores Aims to Help Men Grow in the Stewardships
           </h5>
           <p>
-            Leverage agile frameworks to provide a robust synopsis for high
-            level overviews. Iterative approaches to corporate strategy foster
-            collaborative thinking toLeverage agile frameworks to provide a
-            robust synopsis for high level overviews. Iterative approaches to
-            corporate strategy foster collaborative thinking to
+            Storm the Shores is not a call to violence or anarchy but a call to all men everywhere to seek self-improvement and a relationship with the Almighty. Good men are needed to raise healthy families and nations. Now is the time for men to rise up as fathers, husbands, and citizens. Now is the time to Storm the Shores, Fortify the Line, and Turn the Tide. 
           </p>
         </div>
       </div>

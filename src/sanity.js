@@ -4,7 +4,7 @@ export default {
   name: 'App',
   setup() {
     useSanityClient({
-      projectId: 'hf40kt1w',
+      projectId: '0wjv0hba',
       dataset: 'production',
       // eslint-disable-next-line no-undef
       useCdn: process.env.NODE_ENV === 'production',

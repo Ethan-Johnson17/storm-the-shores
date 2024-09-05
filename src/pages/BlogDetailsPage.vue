@@ -7,9 +7,12 @@
     <div class="row pagePadding">
       <div v-if="blog" class="col-12">
         <h1>{{ blog.blogTitle }}</h1>
-        <h6>{{ blog.author }}</h6>
+        <div class="d-flex align-items-center">
+          <img class="authorPicture me-2" :src="blog.author?.picture" :alt="blog.author?.name+`'s picture`">
+          <h5>{{ blog.author?.name }}</h5>
+        </div>
         <div class="text-center py-3">
-          <img :src="blog.aboutImageURL" alt="">
+          <img :src="blog.aboutImage" alt="">
         </div>
         <h2>{{ blog.subtitle }}</h2>
         <div class="body py-2">
@@ -55,7 +58,8 @@ export default {
           content,
           details,
           postImageContent,
-          "aboutImageURL": coalesce(aboutImageURL, aboutImage.asset->url)
+          "aboutImage": aboutImage.asset->url,
+          author->{name, "picture": picture.asset->url}
         }`
     onMounted(async () => {
       if (AppState.selectedBlog.blogTitle) {
@@ -68,6 +72,7 @@ export default {
         blog.value = data.value[0]
         AppState.selectedBlog = data.value
       }
+      logger.log(blog.value)
     })
     return {
       blog,
@@ -85,5 +90,11 @@ export default {
 .back-arrow-btn {
   position: absolute;
   top: 7rem;
+}
+
+.authorPicture {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 </style>

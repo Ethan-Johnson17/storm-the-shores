@@ -19,7 +19,7 @@
         :key="blog.slug.current"
         class="col-12 pb-5 text-center"
       >
-        <img :src="blog.aboutImageURL" />
+        <img :src="blog.aboutImage" />
         <h3 class="pt-3">{{ blog.blogTitle }}</h3>
         <h4>{{ blog.subtitle }}</h4>
         <p class="text-grey">{{ blog.category }}</p>
@@ -58,7 +58,8 @@ export default {
           content,
           details,
           postImageContent,
-          "aboutImageURL": coalesce(aboutImageURL, aboutImage.asset->url)
+          "aboutImage": aboutImage.asset->url,
+          author->{name, "picture": picture.asset->url}
         }`)
         while (!data.value) {
           await new Promise(resolve => setTimeout(resolve, 200));

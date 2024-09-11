@@ -54,12 +54,169 @@ form:invalid button[type="submit"] {
   text-shadow: black 3px 3px 3px;
 }
 .headerText {
-  font-size: 28px;
+  font-size: 36px;
 }
 .headerText2 {
-  font-size: 16px;
+  font-size: 20px;
+}
+
+nav {
+  font-family: "Noto Serif", serif;
 }
 
 .pagePadding {
-  padding-top: 10rem;
+  padding-top: 15rem;
+}
+
+.navbar-nav .router-link-exact-active {
+  /* border-bottom: 2px solid var(--bs-light);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; */
+  // background-color: fade(30);
+  border-radius: 50%;
+  background-color: $dark-cyan;
+  
+  i {
+    color: $vanilla;
+  }
+}
+
+/* Define default background colors for the logo and icons */
+.navComponent .logo,
+.navComponent ul li i {
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+}
+
+/* Change the background color when any list item is hovered */
+// .navComponent:hover .logo,
+// .navComponent:hover ul li {
+//   background-color: #96abb9;
+//   /* Example color (blue), change to your preference */
+//   border-radius: 50%;
+//   /* To make sure the icon looks circular */
+// }
+
+.navbar-nav li:hover + .nav-label {
+  font-size: x-large;
+  color: green;
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+// .logoContainer .logo:hover + .navbar-nav li {
+//   background-color: $jet;
+// }
+
+.navbar-nav li:hover {
+  /* border-bottom: 2px solid var(--bs-light);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; */
+  // background-color: fade(30);
+  border-radius: 50%;
+  background-color: $jet;
+  cursor: pointer;
+  
+  i {
+    color: $vanilla;
+  }
+    .homeLabel {
+      transform: translateY(-1rem) translateX(-3rem);
+      color: $reseda-green;
+      font-size: large;
+      transition: 500ms;
+    }
+  
+    .aboutLabel {
+      transform: translateY(-1rem) translateX(2rem);
+      color: $reseda-green;
+      font-size: large;
+      transition: 500ms;
+    }
+  
+    .blogLabel {
+      transform: translateY(-1rem) translateX(-2rem);
+      color: $reseda-green;
+      font-size: large;
+      transition: 500ms;
+    }
+  
+    .contactLabel {
+      transform: translateY(-1rem) translateX(1.5rem);
+      color: $reseda-green;
+      font-size: large;
+      transition: 500ms;
+    }
+  
+    .shopLabel {
+      transform: translateY(-1.25rem) translateX(-0.5rem);
+      color: $reseda-green;
+      font-size: large;
+      transition: 500ms;
+    }
+
+  // .nav-label {
+  //   // font-size: large;
+  //     color: green;
+  //     animation: bounce;
+  //     /* referring directly to the animation's @keyframe declaration */
+  //     animation-duration: 2s;
+  //     transition: 500ms;
+  // }
+}
+
+.logo:hover {
+  background-color: $jet;
+  animation: pulse;
+  animation-duration: 1000ms;
+}
+
+.navbar-nav .router-link-exact-active:after {
+  background-color: green;
+}
+
+.navBG {
+  height: 150px;
+  width: 150px;
+  background-color: $jet;
+  position: absolute;
+  top: 1.5rem;
+  border-radius: 50% 50%;
+  z-index: -10;
+}
+
+.half-circle {
+  position: absolute;
+  top: -1.22rem;
+  width: 245px;
+  height: 140px;
+  background-color: $jet;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  // border: 10px solid gray;
+  border-bottom: 0;
+  z-index: -10;
+}
+
+.navBG:hover {
+  height: 150px;
+  width: 150px;
+  background-color: $jet;
+  position: absolute;
+  top: 1.5rem;
+  border-radius: 50% 50%;
+  z-index: -10;
+}
+
+.half-circle:hover {
+  position: absolute;
+  top: -1.22rem;
+  width: 245px;
+  height: 140px;
+  background-color: $jet;
+  border-top-left-radius: 110px;
+  border-top-right-radius: 110px;
+  // border: 10px solid gray;
+  border-bottom: 0;
+  z-index: -10;
 }
